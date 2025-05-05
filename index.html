@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美味なるハンバーガー達の遊び場『BHT』park - Discord サーバー紹介</title>
+    <style>
+        :root {
+            --primary: #e60012;
+            --secondary: #ff4d4d;
+            --dark: #2b2d42;
+            --light: #fffaff;
+            --accent: #e60012;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--dark);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            margin: 20px 0 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .burger-bg {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            font-size: 300px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+            z-index: 1;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            background-color: #4c9d47;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .feature-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .games {
+            background-color: var(--secondary);
+            padding: 80px 0;
+        }
+        
+        .games-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .games h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+        
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            transition: all 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .game-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #555;
+        }
+        
+        .game-content {
+            padding: 25px;
+        }
+        
+        .game-content h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .game-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .community {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .community h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        .testimonials {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px;
+            position: relative;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            text-align: right;
+        }
+        
+        /* クランリーダーセクションのスタイル */
+        .leaders {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .leaders h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+        
+        .leaders-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+        }
+        
+        .leader-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .leader-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            width: 280px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .leader-avatar {
+            height: 120px;
+            width: 120px;
+            margin: 30px auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary);
+            border: 5px solid var(--primary);
+        }
+        
+        .leader-content {
+            padding: 0 25px 30px;
+        }
+        
+        .leader-name {
+            font-size: 1.5rem;
+            margin: 0 0 5px;
+            color: var(--primary);
+        }
+        
+        .leader-role {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .leader-bio {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .leader-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .leader-stat {
+            display: flex;
+            align-items: center;
+            color: #666;
+        }
+        
+        .leader-stat-icon {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card, .game-card, .leader-card {
+                min-width: 280px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="burger-bg">🍔</div>
+        <div class="header-content">
+            <div class="logo">
+                <img src="BHTserver.jpg" alt="BHTのロゴ" style="max-width: 300px; margin-bottom: 30px;">
+            </div>
+            <h1>美味なるハンバーガー達の遊び場『BHT』park</h1>
+            <p>ゲームを愛するハンバーガー達が集まるDiscordコミュニティ。ログインボーナス、ガチャ、そしてアリーナブレイクアウトを中心としたゲーム体験をお楽しみください！</p>
+            <a href="https://discord.gg/ffSRErqKJ7" class="cta-button" target="_blank">サーバーに参加する</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">サーバーの特徴</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎁</div>
+                <h3>ログインボーナス</h3>
+                <p>毎日サーバーにログインするだけで報酬をゲット！継続ログインで特別なアイテムやボーナスを獲得できます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>ガチャシステム</h3>
+                <p>集めたチケットを使ってガチャに挑戦！レアアイテムやサーバー内特典を手に入れるチャンスです。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>フレンドリーなコミュニティ</h3>
+                <p>初心者から上級者まで、ゲームを愛する全ての人が歓迎されるアットホームな雰囲気のサーバーです。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- クランリーダー紹介セクション -->
+    <section class="leaders">
+        <div class="container">
+            <h2>クランリーダー紹介</h2>
+            <p class="leaders-subtitle">『BHT』の活動を支える個性豊かなリーダー陣をご紹介します。それぞれが持つ独自のスキルと情熱で、サーバーを盛り上げています。</p>
+            
+            <div class="leader-list">
+                <div class="leader-card">
+                    <div class="leader-avatar">
+        <img src="dabutiicon.png" alt="ダブチ" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">美味なるダブチ</h3>
+                        <div class="leader-role">創設者</div>
+                        <p class="leader-bio">BHTの創設者。多分アリブレも上手いと思う。壺を買わされている。</p>
+                        <div class="leader-stats">
+                            <div class="leader-stat"><span class="leader-stat-icon">🎮</span> 9000+レイド</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-avatar">
+        <img src="alphaicon.png" alt="あるぬぅ" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">あるぬぅ</h3>
+                        <div class="leader-role">自称プログラマー</div>
+                        <p class="leader-bio">サーバーのbotやこのサイトの作成者。アリブレはほぼやっていない。</p>
+                        <div class="leader-stats">
+                            <div class="leader-stat"><span class="leader-stat-icon"></span> python,html</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-avatar">
+        <img src="seikinicon.png" alt="なにか" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">空白</h3>
+                        <div class="leader-role">アイコン書く人</div>
+                        <p class="leader-bio">サーバーにいるbotのアイコン書いてる人。アリブレは弱い。
+                        </p>
+                        <div class="leader-stats">
+                            <div class="leader-stat"><span class="leader-stat-icon"></span> ライドウ</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-avatar">
+        <img src="omatuicon.png" alt="おまつ" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">OMATU君</h3>
+                        <div class="leader-role">創設者の旧友</div>
+                        <p class="leader-bio">ダブチの旧友。アリブレに関しては金だけは持っている。</p>
+                        <div class="leader-stats">
+                            <div class="leader-stat"><span class="leader-stat-icon"></span> 今は死んでいる。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="games">
+        <div class="games-container">
+            <h2>プレイしているゲーム</h2>
+            <div class="game-list">
+                <div class="game-card">
+                    <div class="game-img">🎮 Arena Breakout</div>
+                    <div class="game-content">
+                        <h3>アリーナブレイクアウト</h3>
+                        <p>メインゲームとして活動中！初心者向けのガイドから上級者向けの戦略まで、一緒に腕を磨こう。</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-img">🎲 Other Games</div>
+                    <div class="game-content">
+                        <h3>その他のゲーム</h3>
+                        <p>FPS、RPG、カジュアルゲームなど、多様なジャンルのゲームを楽しむメンバーがいます。あなたの好きなゲームを共有しよう！</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-img">🎪 Events</div>
+                    <div class="game-content">
+                        <h3>イベント</h3>
+                        <p>定期的に開催される大会やイベントに参加して、腕試しや交流を楽しもう！豪華賞品も用意しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community">
+        <div class="container">
+            <h2>コミュニティの魅力</h2>
+            <p>『BHT』は単なるゲームサーバーではなく、共通の趣味で繋がる仲間達の集まりです。</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">メンバー</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12/30</div>
+                    <div class="stat-label">サーバー作成日</div>
+                </div>
+            </div>
+            
+            <a href="https://discord.gg/ffSRErqKJ7" class="cta-button" target="_blank">今すぐ参加する</a>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>メンバーの声</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">「このサーバーに参加してから、すべてが上手くいっています。壺なども買えました。」</p>
+                <p class="testimonial-author">- 美味なるダブチ</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <img src="BHTserver.jpg" alt="BHTのロゴ" style="max-width: 100px;">
+            <span>BHT park</span>
+        </div>
+        <p>美味なるハンバーガー達の遊び場</p>
+        <div class="social-links">
+            <a href="#">📱</a>
+            <a href="#">📷</a>
+            <a href="#">🐦</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BHT park. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
